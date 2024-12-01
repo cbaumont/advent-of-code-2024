@@ -1,10 +1,10 @@
-def read_file_as_list(file_name) -> list[str]:
+def read_file_as_list(file_name: str) -> list[str]:
     file = open(file_name)
     lines = file.readlines()
     return lines
 
 
-def distance_between_lists():
+def distance_between_lists() -> int:
     left_list, right_list = _split_left_right_lists()
     left_list.sort()
     right_list.sort()
@@ -14,7 +14,7 @@ def distance_between_lists():
     return total_distance
 
 
-def similarity_score():
+def similarity_score() -> int:
     left_list, right_list = _split_left_right_lists()
 
     score = sum(left * right_list.count(left) for left in left_list)
@@ -23,7 +23,7 @@ def similarity_score():
 
 
 def _split_left_right_lists():
-    original_list = read_file_as_list("day1_input.txt")
+    original_list = read_file_as_list("inputs/day1_input.txt")
     left_list = []
     right_list = []
     for line in original_list:
